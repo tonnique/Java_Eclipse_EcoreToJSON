@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated car -->
+      <package
+            uri="http://www.example.org/car"
+            class="ru.vniief.bpms.model.car.CarPackage"
+            genModel="model/car.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated car -->
+      <package
+            uri="http://www.example.org/carcompany"
+            class="ru.vniief.bpms.model.carcompany.carcompanyPackage"
+            genModel="model/car.genmodel"/>
+   </extension>
+
+</plugin>

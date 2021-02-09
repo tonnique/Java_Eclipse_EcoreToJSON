@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+       <category
+            id="ru.vniief.bpms.codepractice.ui"
+            name="CodePractice Category">
+      </category>
+
+      <view
+            category="ru.vniief.bpms.codepractice.ui"
+            class="ru.vniief.bpms.codepractice.ui.views.EcoreTreeView"
+            icon="icons/sample.png"
+            id="ru.vniief.bpms.codepractice.ui.views.EcoreView"
+            inject="true"
+            name="Ecore View">
+      </view>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               id="ru.vniief.bpms.codepractice.ui.views.EcoreView"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.ProblemView">
+         </view>
+
+      </perspectiveExtension>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <category
+            id="ru.vniief.bpms.codepractice.datatransfer.ui.wizards.export"
+            name="Ecore Export">
+      </category>
+      <wizard
+            category="ru.vniief.bpms.codepractice.datatransfer.ui.wizards.export"
+            class="ru.vniief.bpms.codepractice.datatransfer.ui.wizards.ExportJsonWizard"
+            icon="platform:/plugin/org.eclipse.ui/icons/full/etool16/export_wiz.png"
+            id="ru.vniief.bpms.dataproc.datatransfer.ui.wizards.ExportJsonWizard"
+            name="Ecore Export">
+      </wizard>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.commands">
+
+      <category
+            id="ru.vniief.bpms.codepractice.ui.commands.category"
+            name="CodePractice Category">
+      </category>
+
+      <command
+            categoryId="ru.vniief.bpms.codepractice.ui.commands.category"
+            name="Export"
+            id="ru.vniief.bpms.codepractice.ui.commands.export">
+      </command>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.handlers">
+       <handler
+            class="ru.vniief.bpms.codepractice.ui.commands.handler.ExportJsonHandler"
+            commandId="ru.vniief.bpms.codepractice.ui.commands.export">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+            <key
+            commandId="ru.vniief.bpms.codepractice.ui.commands.export"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+E">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            locationURI="menu:org.eclipse.ui.main.menu?after=additions">
+         <menu
+               icon="platform:/plugin/org.eclipse.jface/icons/full/message_info.png"
+               id="u.vniief.bpms.codepractice.ui.menus."
+               label="Ecore"
+               mnemonic="E">
+            <command
+                  commandId="ru.vniief.bpms.codepractice.ui.commands.export"
+                  id="ru.vniief.bpms.dataproc.ui.menus.export"
+                  label="Export Json..."
+                  mnemonic="E">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="ru.vniief.bpms.codepractice.ui.toolbars.datatransfer">
+            <command
+                  id="ru.vniief.bpms.codepractice.ui.toolbars.export"
+                  commandId="ru.vniief.bpms.codepractice.ui.commands.export"
+                  icon="platform:/plugin/org.eclipse.ui/icons/full/etool16/export_wiz.png"
+                  tooltip="Export Ecore">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+</plugin>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/ru.vniief.bpms.model.car/src-gen" creationIcons="false"
+    editDirectory="/ru.vniief.bpms.model.car.edit/src-gen" editorDirectory="/ru.vniief.bpms.model.car.editor/src-gen"
+    modelPluginID="ru.vniief.bpms.model.car" modelName="Car" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0"
+    copyrightFields="false" usedGenPackages="../../ru.vniief.bpms.model.carcompany/model/carcompany.genmodel#//carcompany"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>car.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Car" basePackage="ru.vniief.bpms.model" disposableProviderFactory="true"
+      fileExtensions="bpms" ecorePackage="car.ecore#/">
+    <genClasses ecoreClass="car.ecore#//Car">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute car.ecore#//Car/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference car.ecore#//Car/companyName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute car.ecore#//Car/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute car.ecore#//Car/year"/>
+    </genClasses>
+    <genClasses ecoreClass="car.ecore#//MicroCar"/>
+    <genClasses ecoreClass="car.ecore#//Pickup"/>
+    <genClasses ecoreClass="car.ecore#//MiniVan"/>
+    <genClasses ecoreClass="car.ecore#//SUV"/>
+  </genPackages>
+</genmodel:GenModel>

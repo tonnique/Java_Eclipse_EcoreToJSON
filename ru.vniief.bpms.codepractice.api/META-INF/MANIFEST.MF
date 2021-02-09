@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CodePractice API
+Bundle-SymbolicName: ru.vniief.bpms.codepractice.api
+Bundle-Version: 0.1.0.qualifier
+Automatic-Module-Name: ru.vniief.bpms.codepractice.api
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: ru.vniief.bpms.codepractice.api
+Require-Bundle: com.google.gson;bundle-version="2.8.2"
